@@ -1,0 +1,6 @@
+https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/create-euc-instance#overview
+
+Feature,Normal Workbench (Service Account),EUC Workbench (End User)
+Identity,"Machine-Centric: The instance uses a Service Account (e.g., ...-compute@developer.gserviceaccount.com). The VM itself is the ""actor"" in the eyes of Google Cloud.","Person-Centric: The instance uses your unique Google Account (e.g., vardhman@example.com). You are the ""actor,"" and the VM acts as a proxy for your credentials."
+Permissions,"Static & Bound to VM: Access is determined by the IAM roles assigned to the Service Account. If the SA has BigQuery Admin, anyone with access to that VM can delete any table in the project.","Dynamic & Bound to You: Access is determined by your personal IAM roles. If you don't have permission to see a specific bucket in the Console, you won't be able to see it in the Workbench either."
+Audit Logs,Anonymous Attribution: Cloud Audit Logs will list the Service Account as the principalEmail. It is difficult to distinguish which developer executed a specific query or deleted a resource.,"Direct Attribution: Cloud Audit Logs explicitly record your personal email address for every API call. This provides a clear, legally defensible trail of who accessed or modified data."
